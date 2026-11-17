@@ -15,6 +15,12 @@
   @include MEDIA($TAB_WIDTH) {
     border: 1px solid #ff0000;
   }
+
+  &._intervals {
+    .answers {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+  }
 }
 
 

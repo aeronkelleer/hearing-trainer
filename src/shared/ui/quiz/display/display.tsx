@@ -1,12 +1,12 @@
+import type { TaskStatus } from '@/shared/model/enums';
 import clsx from 'clsx';
 import PlayButton from '../play-button/play-button';
-import type { QuizStatus } from '../types';
 import s from './display.module.scss';
 
 // $======================== Display ========================$ //
 
 interface DisplayProps {
-  status: QuizStatus;
+  status: TaskStatus;
   value: string;
   onPlay: () => void;
 }
