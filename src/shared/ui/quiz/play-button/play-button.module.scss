@@ -1,0 +1,33 @@
+.play-button {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border: none;
+  border-radius: 50%;
+
+  box-shadow: var(--shadow-raised);
+
+  background: var(--color-surface);
+
+  cursor: pointer;
+  color: var(--color-accent);
+
+  font-size: 36px;
+
+  transition: all 250ms;
+
+  &:hover {
+    color: var(--color-accent-dark);
+  }
+
+  &:active {
+    box-shadow: var(--shadow-pressed);
+    transform: scale(0.97);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 5px;
+  }
+}

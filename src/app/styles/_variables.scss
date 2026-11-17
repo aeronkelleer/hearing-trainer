@@ -1,0 +1,46 @@
+:root {
+  // Background
+  --color-bg: #e7e9ef;
+
+  // Surfaces
+  --color-surface: #e7e9ef;
+  --color-surface-light: #f2f4f9;
+  --color-surface-dark: #dce0e8;
+
+  // Shadows
+  --shadow-light: #ffffff;
+  --shadow-dark: #c3c8d2;
+
+  // Text
+  --color-text: #343a46;
+  --color-text-secondary: #7c8493;
+
+  // Accent
+  --color-accent: #6487d9;
+  --color-accent-light: #e1eaff;
+  --color-accent-dark: #4771c9;
+
+  // Status
+  --color-success: #4b9b79;
+  --color-success-light: #e0f1e9;
+
+  --color-error: #d66c75;
+  --color-error-light: #f7e4e6;
+
+  // Neumorphism
+  --shadow-raised:
+    6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+
+  --shadow-raised-small:
+    3px 3px 7px var(--shadow-dark),
+    -3px -3px 7px var(--shadow-light);
+
+  --shadow-pressed:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+
+  --shadow-accent:
+    4px 4px 10px rgba(100, 135, 217, 0.25),
+    -4px -4px 10px rgba(255, 255, 255, 0.9);
+}

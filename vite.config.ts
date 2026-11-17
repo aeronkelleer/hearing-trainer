@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
       preprocessorOptions: {
         scss: {
           additionalData: `@use 'abstracts' as *;`,
-          loadPaths: [path.resolve(import.meta.dirname, 'src/styles')],
+          loadPaths: [path.resolve(import.meta.dirname, 'src/shared/styles')],
         },
       },
     },
