@@ -3,7 +3,7 @@ import { TaskStatus } from './enums';
 
 interface UseQuizSessionProps<T> {
   getRandomValue: () => T;
-  onPlay?: (value: T | null) => void;
+  onPlay?: (value: T) => void;
   onCorrect?: () => void;
   onWrong?: () => void;
 }
@@ -22,7 +22,9 @@ export const useQuizSession = <T>({ getRandomValue, onPlay, onCorrect, onWrong }
       setStatus(TaskStatus.PLAYING);
     }
 
-    onPlay?.(nextValue);
+    if (nextValue !== null) {
+      onPlay?.(nextValue);
+    }
   };
 
   const finish = (isCorrect: boolean) => {

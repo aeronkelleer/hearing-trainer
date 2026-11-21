@@ -1,4 +1,4 @@
-import { INTERVALS } from '@/entities/interval/data/intervals';
+import { INTERVAL_TYPES } from '@/entities/interval/data/interval-types';
 import { TaskStatus } from '@/shared/model/enums';
 import Quiz from '@/shared/ui/quiz/quiz';
 import { useIntervalQuiz } from '../model/use-interval-quiz';
@@ -11,8 +11,7 @@ export default function IntervalQuiz() {
     <Quiz
       className={s['interval-quiz']}
       modifier='intervals'
-      value={currentValue?.name ?? ''}
-      answers={INTERVALS}
+      answers={INTERVAL_TYPES}
       status={status}
       getAnswerKey={(interval) => interval.id}
       getAnswerLabel={(interval) => interval.name}

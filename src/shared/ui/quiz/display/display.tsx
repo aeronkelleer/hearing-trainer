@@ -1,4 +1,4 @@
-import type { TaskStatus } from '@/shared/model/enums';
+import { TaskStatus } from '@/shared/model/enums';
 import clsx from 'clsx';
 import PlayButton from '../play-button/play-button';
 import s from './display.module.scss';
@@ -7,16 +7,17 @@ import s from './display.module.scss';
 
 interface DisplayProps {
   status: TaskStatus;
-  value: string;
   onPlay: () => void;
 }
 
 export default function Display(props: DisplayProps) {
-  const { status, value, onPlay } = props;
+  const { status, onPlay } = props;
 
   return (
     <div className={s.display}>
-      <div className={clsx(s.value, s[`_${status.toLowerCase()}`])}>{value}</div>
+      <div className={clsx(s.value, s[`_${status.toLowerCase()}`])}>
+        {status === TaskStatus.CORRECT ? 'Верно' : status === TaskStatus.WRONG ? 'Неверно' : ''}
+      </div>
       <PlayButton onClick={onPlay} />
     </div>
   );

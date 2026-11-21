@@ -13,8 +13,7 @@ interface QuizStats {
 }
 
 interface QuizProps<T> {
-  value: string;
-  answers: T[];
+  answers: readonly T[];
   status: TaskStatus;
   className: string;
   modifier?: string;
@@ -35,7 +34,6 @@ export default function Quiz<T>(props: QuizProps<T>) {
     onGuess,
     onPlay,
     status,
-    value,
     disabled,
     getAnswerKey,
     stats,
@@ -44,7 +42,7 @@ export default function Quiz<T>(props: QuizProps<T>) {
   return (
     <div className={clsx(s.quiz, className ?? '', s[`_${modifier}`])}>
       <Stats {...stats} />
-      <Display status={status} value={value} onPlay={onPlay} />
+      <Display status={status} onPlay={onPlay} />
       <ul className={s.answers}>
         {answers.map((answer) => (
           <li key={getAnswerKey(answer)} className={s.answer}>
