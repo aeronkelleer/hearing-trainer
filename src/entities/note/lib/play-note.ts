@@ -1,9 +1,6 @@
+import { playNotes } from '@/shared/lib/audio/play-notes';
 import type { Note } from '../model/types';
 
-export const playNote = (note: Note) => {
-  const audio = new Audio(note.audio);
-
-  audio.play().catch((error) => {
-    console.error('Failed to play note:', error);
-  });
+export const playNote = (note: Note): Promise<void> => {
+  return playNotes([note.audio]);
 };
